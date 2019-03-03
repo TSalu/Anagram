@@ -3,7 +3,7 @@
 import time
 import sys
 
-# to run the python code --> python3 main.py "word" "source"
+# to run the python code --> python3 anagram.py "word" "source"
 # to run the executable --> ./anagram.py "word" "source"
 
 
