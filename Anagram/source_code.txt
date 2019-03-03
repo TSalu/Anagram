@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import time
+import sys
+
+# to run the python code --> python3 main.py "word" "source"
+# to run the executable --> ./anagram.py "word" "source"
+
+
+def anagram_beast(word, source):
+    start = time.time()
+
+    input_length = len(word)
+    with open(source, encoding='latin-1') as f:
+        contents = f.readlines()
+    input_lowercase = word.lower()
+    found_anagrams = []
+
+    for line in contents:
+        x = line
+        line = line.strip().lower()
+        if len(line) == input_length:
+            if sorted(line.strip().lower()) == sorted(input_lowercase):
+                found_anagrams.append(x)
+
+    anagrams = ", ".join(found_anagrams)
+    end = time.time()
+    print(str(end - start) + ", " + anagrams)
+
+
+if __name__ == '__main__':
+    data = anagram_beast(sys.argv[1], sys.argv[2])
+
+
+
